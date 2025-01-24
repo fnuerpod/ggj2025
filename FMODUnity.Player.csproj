@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C32E954B-9388-51AD-C917-340FA7CC927C}</ProjectGuid>
+    <ProjectGuid>{D5CE3919-7AA6-988C-0153-526B0B4A4335}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>FMODUnity</AssemblyName>
@@ -913,15 +913,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{FD79DCFB-79A9-BE4E-519D-E09CD57D7410}</Project>
+      <Project>{67CE1A06-95AC-3D51-6D50-23E917E3B97B}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
-      <Project>{EF4BC15B-E0C8-4E6A-FA56-3F749109362A}</Project>
+      <Project>{FC6F7052-A701-2FBE-5E50-B3BD7C1C5A6D}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{BB4E9FF0-566B-BF85-8F65-DDA975CA79CE}</Project>
+      <Project>{554A3EDA-5186-8C79-36FF-CC1968C78FAB}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>
