@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0979F32C-A6A3-5E39-4030-15B683B04C18}</ProjectGuid>
+    <ProjectGuid>{7809C06B-840E-8822-14BC-94626D970396}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>FMODUnityResonance</AssemblyName>
@@ -859,11 +859,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="FMODUnity.Player.csproj">
-      <Project>{C32E954B-9388-51AD-C917-340FA7CC927C}</Project>
+      <Project>{D5CE3919-7AA6-988C-0153-526B0B4A4335}</Project>
       <Name>FMODUnity.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{BB4E9FF0-566B-BF85-8F65-DDA975CA79CE}</Project>
+      <Project>{554A3EDA-5186-8C79-36FF-CC1968C78FAB}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>
