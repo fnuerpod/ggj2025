@@ -61,13 +61,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.34f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\InteractSystem.cs" />
-    <Compile Include="Assets\Scripts\GrabbableObject.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\RandomSpawning.cs" />
+    <Compile Include="Assets\Scripts\IngredientList.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Pot.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />
     <Compile Include="Assets\Scripts\CameraControlls.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Jiggly Bubble Free\Shaders\Particle Alpha Blended Cubemap.shader" />
+    <None Include="Assets\Jiggly Bubble Free\Shaders\Particle Alpha Blended Cubemap Skybox.shader" />
+    <None Include="Assets\Jiggly Bubble Free\readme_Jiggly_Bubble_Free.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
