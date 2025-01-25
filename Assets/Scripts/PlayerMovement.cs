@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.UIElements.Experimental;
 using static UnityEditorInternal.VersionControl.ListControl;
+using Microsoft.Win32.SafeHandles;
 
 //require rigidbody
 [RequireComponent(typeof(Rigidbody))]
@@ -18,6 +19,8 @@ public class PlayerMovement:MonoBehaviour
     #region Variables
     [Header("References")]
     public Transform orientation;
+    public Transform faceDirection;
+    public Transform grabPoint;
     public Transform playerCam;
     private Rigidbody rb;
 
@@ -86,8 +89,6 @@ public class PlayerMovement:MonoBehaviour
 
     private void Update()
     {
-        //ground check
-        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
         MyInput();
 
         SpeedControl();
@@ -95,6 +96,8 @@ public class PlayerMovement:MonoBehaviour
         StateHandler();
 
         HandleDrag();
+
+        FaceDirection();
     }
 
     private void FixedUpdate()
@@ -115,6 +118,17 @@ public class PlayerMovement:MonoBehaviour
         }
     }
     #endregion
+
+    //code to rotate the face of the main character towards where the last move command was
+    private void FaceDirection()
+    {
+        //rotate the face direction
+        if (moveDirection != Vector3.zero)
+        {
+            faceDirection.transform.rotation = Quaternion.LookRotation(moveDirection);
+            grabPoint.transform.rotation = Quaternion.LookRotation(moveDirection);
+        }
+    }
 
     private void OnCollisionStay(Collision collision)
     {
