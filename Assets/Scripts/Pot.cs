@@ -13,8 +13,8 @@ public class Pot : MonoBehaviour
 
     private long LastTemperatureIncrease;
 
-    private float Lerp_MinHeight = 1.571f;
-    private float Lerp_MaxHeight = 1.818f;
+    private float Lerp_MinHeight = 0.571f;
+    private float Lerp_MaxHeight = 0.818f;
 
 
 
@@ -49,7 +49,7 @@ public class Pot : MonoBehaviour
             LastTemperatureIncrease = GetUnixTime();
         }
 
-        transform.position = new Vector3(transform.position.x, LerpCylinderHeight(), transform.position.z);
+        transform.localPosition = new Vector3(0, LerpCylinderHeight(), 0);
     }
 
     private void OnCollisionEnter(Collision collision)
