@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public int ingredientEffectiveness = 1;
+    public int ingredientEffectiveness;
     [SerializeField] private int materialIndex;
     public List<string> hints;
     private Color[] colours =
