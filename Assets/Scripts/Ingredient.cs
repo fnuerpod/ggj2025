@@ -5,7 +5,7 @@ public class Ingredient : MonoBehaviour
 {
     public int ingredientEffectiveness = 1;
     [SerializeField] private int materialIndex;
-    [SerializeField] private List<string> hints;
+    public List<string> hints;
     private Color[] colours =
     {
         Color.red,
