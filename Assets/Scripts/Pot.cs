@@ -5,42 +5,28 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
     public StudioEventEmitter StudioEventEmitter;
-    public BoxCollider Colldier;
 
-    private bool SoundStartedOnLastUpdateCycle = false;
+    public int LiquidTemperature = 50;
+    public int IngredientEffectivenessMultipler = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Only do checks on tagged ingredients.
+        if (collision.gameObject.tag != "Ingredient") return;
 
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.transform.name == "Pot")
-            {
-                if (Input.GetMouseButton(0))
-                {
-                    if (SoundStartedOnLastUpdateCycle) return;
-                    StudioEventEmitter.Play();
-                    SoundStartedOnLastUpdateCycle = true;
-                }
-                else
-                {
-                    SoundStartedOnLastUpdateCycle = false;
-                }
-            }
-            else
-            {
-                SoundStartedOnLastUpdateCycle = false;
-            }
-        } else {
-            SoundStartedOnLastUpdateCycle = false;
-        }
+        Ingredient collidedIngredient = collision.gameObject.GetComponent<Ingredient>();
+
+        Debug.Log("The collided ingredient has a material index of: " + collidedIngredient.materialIndex.ToString());
+
+        // play gwa gwa
+        StudioEventEmitter.Play();
+
+        Destroy(collision.gameObject);
     }
 }
