@@ -95,3 +95,6 @@ fmod_editor.Log
 /Logs/*
 /Assets/Plugins/FMOD/Cache
 /Assets/Plugins/FMOD/Cache/*
+
+/Library
+/Library/*
