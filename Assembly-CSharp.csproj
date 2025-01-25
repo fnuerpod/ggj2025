@@ -70,6 +70,11 @@
     <Compile Include="Assets\Scripts\CameraControlls.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Jiggly Bubble Free\Shaders\Particle Alpha Blended Cubemap.shader" />
+    <None Include="Assets\Jiggly Bubble Free\Shaders\Particle Alpha Blended Cubemap Skybox.shader" />
+    <None Include="Assets\Jiggly Bubble Free\readme_Jiggly_Bubble_Free.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
       <Private>False</Private>

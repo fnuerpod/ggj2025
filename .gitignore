@@ -98,3 +98,5 @@ fmod_editor.Log
 
 /Library
 /Library/*
+/UserSettings/
+/UserSettings/*
