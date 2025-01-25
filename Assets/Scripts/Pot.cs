@@ -22,7 +22,7 @@ public class Pot : MonoBehaviour
 
         Ingredient collidedIngredient = collision.gameObject.GetComponent<Ingredient>();
 
-        Debug.Log("The collided ingredient has a material index of: " + collidedIngredient.materialIndex.ToString());
+        Debug.Log("The collided ingredient has a material index of: No");
 
         // play gwa gwa
         StudioEventEmitter.Play();
