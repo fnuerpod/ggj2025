@@ -102,4 +102,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e35849262495da47bff2d34a622ab36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 0}
+  materialIndex: 3
