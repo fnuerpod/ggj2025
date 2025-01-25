@@ -321,10 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dcc34fe6572b148ad04949dcfdc43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hints:
+  hintText:
   - {fileID: 6760754318550246970}
   - {fileID: 1787733829720447058}
   - {fileID: 4438424355824544315}
+  maxIngredients: 3
 --- !u!1 &3917699089145629776
 GameObject:
   m_ObjectHideFlags: 0

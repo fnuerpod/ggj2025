@@ -1,71 +1,99 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class IngredientList : MonoBehaviour
 {
-    private GameObject[] ingredients;
     private int page;
-    private bool once;
-    [SerializeField] private TextMeshProUGUI[] hints;
+    private GameObject[] ingredients;
+    private List<PageHints> pageHintsList = new List<PageHints>();
+
+    [SerializeField] private TextMeshProUGUI[] hintText;
+    [SerializeField] private int maxIngredients;
+
+    private class PageHints // class for storing hints for each ingredient on each page
+    {
+        public string IngredientName { get; set; }
+        public string Size { get; set; }
+        public string Color { get; set; }
+        public bool ShowSize { get; set; }
+        public bool ShowColor { get; set; }
+    }
 
     void Start()
     {
-        StartCoroutine(FindIngredients());
+        StartCoroutine(FindIngredients()); // Find ingredients
     }
 
     IEnumerator FindIngredients()
     {
-        yield return new WaitForSeconds(1);
-        ingredients = GameObject.FindGameObjectsWithTag("Ingredient");
-        once = true;
-        DisplayPage();
+        yield return new WaitForSeconds(0.1f); // Wait for ingredients to be created
+        ingredients = GameObject.FindGameObjectsWithTag("Ingredient"); // Find objects with the "Ingredient" tag and assign them to the ingredients array
+        RandomiseHints(); // Randomise hints
+        UpdatePage(); // Update the page
     }
 
-    void DisplayPage()
+    void RandomiseHints()
     {
-        if (page < ingredients.Length)
+        pageHintsList.Clear(); // Clear the current page hints list
+        foreach (var ingredient in ingredients) // For each ingredient
         {
-            var ingredient = ingredients[page];
-            var ingredientHints = ingredient.GetComponent<Ingredient>().hints;
+            PageHints pageHints = new PageHints // Create a new page hints object
+            {
+                IngredientName = ingredient.GetComponent<Ingredient>().hints[0], // Set the ingredient name hint
+                ShowColor = Random.value > 0.5f, // Randomly decide whether to show the colour hint
+                ShowSize = Random.value > 0.5f // Randomly decide whether to show the size hint
+            };
 
-            if (once)
-            {
-                for (int i = 0; i < hints.Length; i++)
-                {
-                    if (i != 0 || Random.value > 0.5f)
-                    {
-                        hints[i].text = "";
-                        ingredient.GetComponent<Ingredient>().ingredientEffectiveness++;
-                    }
-                }
-            }
-            once = false;
-            for (int i = 0; i < hints.Length; i++)
-            {
-                if (hints[i].text != "")
-                {
-                    hints[i].text = ingredientHints[i];
-                }
-            }
+            if (pageHints.ShowColor) // If the colour is to be shown
+                pageHints.Color = ingredient.GetComponent<Ingredient>().hints[1]; // Set the colour hint
+            else // If not
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness++; // Increase the ingredient effectiveness
+
+            if (pageHints.ShowSize) // If the size is to be shown
+                pageHints.Size = ingredient.GetComponent<Ingredient>().hints[2]; // Set the size hint
+            else // If not
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness++; // Increase the ingredient effectiveness
+
+            pageHintsList.Add(pageHints); // Add these hints to the list of page hints
+        }
+    }
+
+    void UpdatePage()
+    {
+        PageHints currentPageHints = pageHintsList[page]; // Get the hints for the current page
+        hintText[0].text = currentPageHints.IngredientName; // Set the ingredient name hint
+        hintText[1].gameObject.SetActive(currentPageHints.ShowColor); // Set the colour hint active or inactive
+        hintText[2].gameObject.SetActive(currentPageHints.ShowSize); // Set the size hint active or inactive
+
+        if (currentPageHints.ShowColor) // If the colour is to be shown
+        {
+            hintText[1].text = currentPageHints.Color; // Set the colour hint text
+        }
+
+        if (currentPageHints.ShowSize) // If the size is to be shown
+        {
+            hintText[2].text = currentPageHints.Size; // Set the size hint text
         }
     }
 
     public void NextPage()
     {
-        if (page < ingredients.Length - 1)
+        if (page < maxIngredients - 1) // If the page is less than the maximum number of ingredients
         {
-            page++;
-            DisplayPage();
+            page++; // Show the next page
+            UpdatePage(); // Update the page
         }
     }
 
-    public void PreviousPage()
+    public void PreviousPage() 
     {
-        if (page > 0)
+        if (page > 0) // If the page is greater than 0
         {
-            page--;
-            DisplayPage();
+            page--; // Show the previous page
+            UpdatePage(); // Update the page
         }
     }
 }
