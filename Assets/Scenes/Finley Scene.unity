@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 161076473}
   - component: {fileID: 161076477}
   - component: {fileID: 161076476}
+  - component: {fileID: 161076478}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -305,6 +306,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &161076478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161076472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &436413318
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +632,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387100963096358816, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: Params.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/PotGame_SFX_PotBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 1794613794
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1175098420
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 2020563367
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 746391594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: PotIntensity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499558772756727740, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      propertyPath: Params.Array.data[0].Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531337435222580132, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
