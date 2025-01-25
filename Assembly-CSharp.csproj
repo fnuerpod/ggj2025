@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\RandomSpawning.cs" />
     <Compile Include="Assets\Scripts\IngredientList.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Pot.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />

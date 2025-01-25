@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9035582799248792512
+--- !u!114 &-4628423574266379884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,15 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: FMOD_AudioBanks/TEST BANK/Build/Desktop/Master.bank
-  Name: Desktop/Master
+  Path: FMOD_AudioBanks/BANK FILES/Master.bank
+  Name: Master
   StudioPath: bank:/Master
-  lastModified: 638733465073917396
+  lastModified: 638734152209152015
   FileSizes: []
   Exists: 1
---- !u!114 &-1163087013175708123
+--- !u!114 &-2753220407328692020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_AudioBanks/BANK FILES/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638734152209162016
+  FileSizes:
+  - Name: 
+    Value: 988
+  Exists: 1
+--- !u!114 &-1718658782284538679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28,23 +48,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TEST_SFX_SQUISHYSTEP
+  m_Name: event:/SFX/PotGame_SFX_GwaGwa
   m_EditorClassIdentifier: 
-  Path: event:/SFX/TEST_SFX_SQUISHYSTEP
+  Path: event:/SFX/PotGame_SFX_GwaGwa
   Guid:
-    Data1: -1973481571
-    Data2: 1226199534
-    Data3: -1596087139
-    Data4: -1540210526
+    Data1: 1048582005
+    Data2: 1074545021
+    Data3: 1491212719
+    Data4: 757466539
   Banks:
-  - {fileID: -9035582799248792512}
+  - {fileID: 2950851130891985485}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-915226557648979674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MUSIC.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_AudioBanks/BANK FILES/MUSIC.bank
+  Name: MUSIC
+  StudioPath: bank:/MUSIC
+  lastModified: 638734152209152015
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,20 +96,22 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6867609832853018041}
-  - {fileID: -9035582799248792512}
+  - {fileID: -2753220407328692020}
+  - {fileID: -4628423574266379884}
+  - {fileID: -915226557648979674}
+  - {fileID: 2950851130891985485}
   EditorEvents:
-  - {fileID: -1163087013175708123}
-  - {fileID: 796530082042980748}
-  - {fileID: 8915970500291325408}
+  - {fileID: 3200719607037172246}
+  - {fileID: 2879955551695642873}
+  - {fileID: -1718658782284538679}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -9035582799248792512}
+  - {fileID: -4628423574266379884}
   StringsBanks:
-  - {fileID: 6867609832853018041}
-  cacheTime: 638733465073917396
+  - {fileID: -2753220407328692020}
+  cacheTime: 638734152209173364
   cacheVersion: 131622
---- !u!114 &796530082042980748
+--- !u!114 &2879955551695642873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,24 +121,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/TEST_BGMUSIC_MAINMENU
+  m_Name: event:/MUSIC/PotGame_Music_MenuTheme
   m_EditorClassIdentifier: 
-  Path: event:/MUSIC/TEST_BGMUSIC_MAINMENU
+  Path: event:/MUSIC/PotGame_Music_MenuTheme
   Guid:
-    Data1: 178189773
-    Data2: 1137684886
-    Data3: 798170810
-    Data4: 766360667
+    Data1: -1574759723
+    Data2: 1284303708
+    Data3: 111068562
+    Data4: 1653161849
   Banks:
-  - {fileID: -9035582799248792512}
+  - {fileID: -915226557648979674}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 69818
---- !u!114 &6867609832853018041
+  Length: 93333
+--- !u!114 &2950851130891985485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,17 +148,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.strings.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: FMOD_AudioBanks/TEST BANK/Build/Desktop/Master.strings.bank
-  Name: Desktop/Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638733465073917396
-  FileSizes:
-  - Name: 
-    Value: 896
+  Path: FMOD_AudioBanks/BANK FILES/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638734152209173364
+  FileSizes: []
   Exists: 1
---- !u!114 &8915970500291325408
+--- !u!114 &3200719607037172246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,20 +166,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/TEST_BGMUSIC_GAMETHEME
+  m_Name: event:/MUSIC/PotGame_Music_GameMusic
   m_EditorClassIdentifier: 
-  Path: event:/MUSIC/TEST_BGMUSIC_GAMETHEME
+  Path: event:/MUSIC/PotGame_Music_GameMusic
   Guid:
-    Data1: -893330185
-    Data2: 1257310850
-    Data3: 90760383
-    Data4: -1369153807
+    Data1: -1795798895
+    Data2: 1088052797
+    Data3: 1748252808
+    Data4: 1824580540
   Banks:
-  - {fileID: -9035582799248792512}
+  - {fileID: -915226557648979674}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 81454
+  Length: 131111
