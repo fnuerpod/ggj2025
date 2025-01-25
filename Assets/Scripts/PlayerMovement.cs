@@ -67,7 +67,7 @@ public class PlayerMovement:MonoBehaviour
         walkSpeed = 6;
         moveSpeed = walkSpeed;
         playerHeight = 2;
-        groundDrag = 100;
+        groundDrag = 5f;
 
         //jump
         jumpForce = 5f;
@@ -87,8 +87,7 @@ public class PlayerMovement:MonoBehaviour
     private void Update()
     {
         //ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
-
+        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
         MyInput();
 
         SpeedControl();
@@ -117,6 +116,25 @@ public class PlayerMovement:MonoBehaviour
     }
     #endregion
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = false;
+        }
+    }
 
     private void StateHandler()
     {
