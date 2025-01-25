@@ -29,6 +29,7 @@ public class Ingredient : MonoBehaviour
     void Start()
     {
         // Name
+        gameObject.name = gameObject.name.Replace("(Clone)", ""); // Remove "(Clone)" from the name of the ingredient
         hints.Insert(0, "Name: " + gameObject.name); // Add the name hint to the list of hints
         // Colours
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>(); // Get the MeshRenderer component
@@ -37,8 +38,9 @@ public class Ingredient : MonoBehaviour
         string[] colourNames = { "Red", "Blue", "Green", "Yellow", "Magenta", "Cyan", "White", "Black", "Grey", "Clear" }; // Update the colour hint
         hints.Insert(1, "Colour: " + colourNames[System.Array.IndexOf(colours, meshRenderer.materials[materialIndex].color)]); // Add the colour hint to the list of hints
         // Sizes
-        transform.localScale *= sizes[Random.Range(0, sizes.Length)]; // Set the size of the ingredient to one of the random sizes
-        string[] sizeNames = { "Small", "Medium", "Large" }; // Update the size hint
-        hints.Insert(2, "Size: " + sizeNames[System.Array.IndexOf(sizes, transform.localScale)]); // Add the size hint to the list of hints
+        float changedSize = sizes[Random.Range(0, sizes.Length)]; // Take one of the random sizes and store it in a variable
+        transform.localScale *= changedSize; // Set the size of the ingredient to one of the random sizes
+        string[] sizeNames = { "Small", "Medium", "Large" }; // Update the size hints
+        hints.Insert(2, "Size: " + sizeNames[System.Array.IndexOf(sizes, changedSize)]); // Add the size hint to the list of hints
     }
 }
