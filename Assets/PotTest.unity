@@ -413,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 1730989525}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000037748947, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.008016348, y: 0.77900004, z: -0.00023336787}
+  m_LocalPosition: {x: -0.008016348, y: 0.818, z: 0}
   m_LocalScale: {x: 1.2637801, y: 0.0001, z: 1.26378}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -506,8 +506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StudioEventEmitter: {fileID: 1730989531}
-  LiquidTemperature: 50
+  LiquidTemperature: 0
   IngredientEffectivenessMultipler: 1
+  SecondsBetweenTemperatureIncrease: 1
 --- !u!114 &1730989531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +664,14 @@ PrefabInstance:
     - target: {fileID: 4215110729725179701, guid: 9b71b6abf86b71c47b6cf075fb2a416d, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784296543375667042, guid: 9b71b6abf86b71c47b6cf075fb2a416d, type: 3}
+      propertyPath: hints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784296543375667042, guid: 9b71b6abf86b71c47b6cf075fb2a416d, type: 3}
+      propertyPath: 'hints.Array.data[0]'
+      value: Will give you BRAINS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
