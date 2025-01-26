@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pot : MonoBehaviour
 {
@@ -92,6 +93,13 @@ public class Pot : MonoBehaviour
         {
             LiquidTemperature += 1;
             LastTemperatureIncrease = GetUnixTime();
+        }
+
+        if (LiquidTemperature >= 100)
+        {
+            BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            Sound_PotBubble.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            SceneManager.LoadScene("Game Over");
         }
 
         transform.localPosition = new Vector3(0, LerpCylinderHeight(), 0);
