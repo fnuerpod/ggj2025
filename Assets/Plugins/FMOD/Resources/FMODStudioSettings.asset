@@ -454,7 +454,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: FMOD_AudioBanks/BANK FILES
+  sourceBankPath: AUDIO BANK FILES
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -478,6 +478,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - MUSIC
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264

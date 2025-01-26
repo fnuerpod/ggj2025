@@ -12,6 +12,8 @@ public class InteractSystem : MonoBehaviour
     private GrabbableObject grabbableObject;
     #endregion
 
+    public Ingredient HoldingIngredient;
+
     private void Start()
     {
         pickupDistance = 2f;
@@ -41,8 +43,8 @@ public class InteractSystem : MonoBehaviour
             //raycast from the player in the face direction
             if (Physics.Raycast(faceDirection.position, faceDirection.forward, out RaycastHit raycastHit, pickupDistance, pickupLayerMask))
             {
-
-                if (raycastHit.transform.TryGetComponent(out grabbableObject))
+                // check if it is a grabbable object
+                if (raycastHit.transform.TryGetComponent(out grabbableObject) && raycastHit.transform.TryGetComponent(out HoldingIngredient))
                 {
                     grabbableObject.Grab(objectGrabPointTransform);
                 }
@@ -53,6 +55,7 @@ public class InteractSystem : MonoBehaviour
             //if grabbed -> drop
             grabbableObject.Drop();
             grabbableObject = null;
+            HoldingIngredient = null;
         }
     }
 }

@@ -16,8 +16,6 @@ public class Pot : MonoBehaviour
     private float Lerp_MinHeight = 0.571f;
     private float Lerp_MaxHeight = 0.818f;
 
-
-
     private static long GetUnixTime()
     {
         DateTime epochStart = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -39,7 +37,7 @@ public class Pot : MonoBehaviour
         Debug.Log(LastTemperatureIncrease);
 
         // initialise sounds.
-        Sound_PotBubble = FMODUnity.RuntimeManager.CreateInstance("event:/PotGame_SFX_PotBubble");
+        Sound_PotBubble = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_PotBubble");
         Sound_PotBubble.start();
     }
 
@@ -47,7 +45,7 @@ public class Pot : MonoBehaviour
     {
         long CurrentUnixTime = GetUnixTime();
 
-        if (CurrentUnixTime > LastTemperatureIncrease + (SecondsBetweenTemperatureIncrease * 1000))
+        if (CurrentUnixTime > LastTemperatureIncrease + (SecondsBetweenTemperatureIncrease * 1000) && LiquidTemperature < 100)
         {
             LiquidTemperature += 1;
             LastTemperatureIncrease = GetUnixTime();
@@ -55,7 +53,8 @@ public class Pot : MonoBehaviour
 
         transform.localPosition = new Vector3(0, LerpCylinderHeight(), 0);
 
-        Sound_PotBubble.setParameterByName("PotIntensity", (float)LiquidTemperature);
+        //Sound_PotBubble.setParameterByName("PotIntensity", (float)LiquidTemperature);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PotIntensity", (float)LiquidTemperature);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -74,4 +73,6 @@ public class Pot : MonoBehaviour
 
         Destroy(collision.gameObject);
     }
+
+    
 }
