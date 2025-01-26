@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4380971856549031263}
   - component: {fileID: -7836842191588764878}
   - component: {fileID: -4282892488684057996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thin Sphere Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

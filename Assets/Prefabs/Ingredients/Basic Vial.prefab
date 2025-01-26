@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3197913158022980886}
   - component: {fileID: 9144656637316447939}
   - component: {fileID: 1348486429305209188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Basic Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
