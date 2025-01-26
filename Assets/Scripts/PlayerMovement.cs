@@ -8,7 +8,6 @@ using UnityEngine.XR;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.UIElements.Experimental;
-using static UnityEditorInternal.VersionControl.ListControl;
 using Microsoft.Win32.SafeHandles;
 
 //require rigidbody
