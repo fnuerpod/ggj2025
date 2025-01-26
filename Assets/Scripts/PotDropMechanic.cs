@@ -9,7 +9,7 @@ public class PotDropMechanic : MonoBehaviour
 
     public StudioEventEmitter Sound_PotionDrop;
 
-    private bool PlayerInCollisionField = false;
+    public bool PlayerInCollisionField = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
