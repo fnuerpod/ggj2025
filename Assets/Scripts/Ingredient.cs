@@ -27,6 +27,8 @@ public class Ingredient : MonoBehaviour
         1.25f
     };
 
+    public bool acceptDrop = false;
+
     void Start()
     {
         // Name

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Ingredient
+  - PlayerController
   layers:
   - Default
   - TransparentFX
