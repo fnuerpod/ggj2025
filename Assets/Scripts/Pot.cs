@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pot : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Pot : MonoBehaviour
     public int IngredientEffectivenessMultipler = 1;
     public int SecondsBetweenTemperatureIncrease = 1;
 
-    public ParticleSystem particleSystem;
+    public new ParticleSystem particleSystem;
 
     private long LastTemperatureIncrease;
 
@@ -55,7 +56,7 @@ public class Pot : MonoBehaviour
         // initialise sounds.;
         BGM = FMODUnity.RuntimeManager.CreateInstance("event:/MUSIC/PotGame_Music_GameTheme");
         Sound_PotBubble = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_PotBubble");
-        BGM.setVolume(0.1f);
+        BGM.setVolume(0.5f);
 
         BGM.start();
         Sound_PotBubble.start();
@@ -92,6 +93,13 @@ public class Pot : MonoBehaviour
         {
             LiquidTemperature += 1;
             LastTemperatureIncrease = GetUnixTime();
+        }
+
+        if (LiquidTemperature >= 100)
+        {
+            BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            Sound_PotBubble.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            SceneManager.LoadScene("Game Over");
         }
 
         transform.localPosition = new Vector3(0, LerpCylinderHeight(), 0);

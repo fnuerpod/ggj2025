@@ -15,8 +15,6 @@ public class CameraControlls : MonoBehaviour
     {
         rotationSpeed = 10f;
         player = GameObject.FindGameObjectWithTag("Player");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     // Update is called once per frame

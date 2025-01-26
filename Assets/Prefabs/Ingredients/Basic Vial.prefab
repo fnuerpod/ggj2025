@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4784296543375667042}
   - component: {fileID: 4384256982258338168}
   - component: {fileID: 3197913158022980886}
+  - component: {fileID: 9144656637316447939}
   - component: {fileID: 1348486429305209188}
-  m_Layer: 0
-  m_Name: Vial1
+  m_Layer: 6
+  m_Name: Basic Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.000000059604645, z: 0}
-  m_LocalScale: {x: 0.11056335, y: 0.11056335, z: 0.11056335}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.05, y: 0.050001513, z: 0.050001513}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,6 +109,7 @@ MonoBehaviour:
   ingredientEffectiveness: 1
   materialIndex: 3
   hints: []
+  acceptDrop: 0
 --- !u!136 &4384256982258338168
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +160,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!136 &9144656637316447939
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785499037582143033}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.114649
+  m_Height: 14.358655
+  m_Direction: 1
+  m_Center: {x: 0, y: 7.1304555, z: 0}
 --- !u!114 &1348486429305209188
 MonoBehaviour:
   m_ObjectHideFlags: 0
