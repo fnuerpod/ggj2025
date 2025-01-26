@@ -1,10 +1,14 @@
 using FMODUnity;
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
+
+    [SerializeField] private TextMeshProUGUI potTemperatureUI;
+
     FMOD.Studio.EventInstance Sound_PotBubble;
     FMOD.Studio.EventInstance BGM;
 
@@ -96,6 +100,8 @@ public class Pot : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PotIntensity", (float)LiquidTemperature);
 
         LerpParticleEffects();
+
+        potTemperatureUI.text = "Temperature: " + LiquidTemperature.ToString() + "°C";
     }
 
     private void OnCollisionEnter(Collision collision)

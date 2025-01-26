@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -9,6 +10,10 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private float pickupDistance;
     [SerializeField] private LayerMask pickupLayerMask;
+    [SerializeField] private TextMeshProUGUI ingredientPickupHint;
+
+    public PotDropMechanic dropMechanic;
+
     private GrabbableObject grabbableObject;
 
     FMOD.Studio.EventInstance Sound_ItemGrab;
@@ -25,9 +30,79 @@ public class InteractSystem : MonoBehaviour
         Sound_ItemGrab = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_ItemPickup");
     }
 
+    private void CheckIfGrabbableNearby()
+    {
+        if (grabbableObject != null)
+        {
+            // determine the text to be used for pickup/drop
+            string ActionHintText = "fault";
+
+            if (HoldingIngredient != null)
+            {
+                // holding ingredient check proximity to pot.
+                if (dropMechanic.PlayerInCollisionField)
+                {
+                    ActionHintText = "drop into pot";
+                }
+                else
+                {
+                    ActionHintText = "drop";
+                }
+            }
+            else
+            {
+                ActionHintText = "pick up";
+            }
+
+            ingredientPickupHint.text = HoldingIngredient.hints[0] + "\r\nPress <color=#00ff00>E</color> to " + ActionHintText;
+            ingredientPickupHint.enabled = true;
+
+            return;
+        }
+
+        if (Physics.Raycast(faceDirection.position, faceDirection.forward, out RaycastHit raycastHit, pickupDistance, pickupLayerMask))
+        {
+            // check if it is a grabbable object
+            GrabbableObject possiblyGrabbable = null;
+            Ingredient possiblyGrabbableIngredient = null;
+
+            if (raycastHit.transform.TryGetComponent(out possiblyGrabbable) && raycastHit.transform.TryGetComponent(out possiblyGrabbableIngredient)) { 
+    
+                    Debug.Log("We have a grabbable object in our horizons. nomnomnomom.");
+
+                // determine the text to be used for pickup/drop
+                string ActionHintText = "fault";
+
+                if (HoldingIngredient != null)
+                {
+                    // holding ingredient check proximity to pot.
+                    if (dropMechanic.PlayerInCollisionField)
+                    {
+                        ActionHintText = "drop into pot";
+                    } else
+                    {
+                        ActionHintText = "drop";
+                    }
+                } else
+                {
+                    ActionHintText = "pick up";
+                }
+
+                ingredientPickupHint.text = possiblyGrabbableIngredient.hints[0] + "\r\nPress <color=#00ff00>E</color> to " + ActionHintText;
+                ingredientPickupHint.enabled = true;
+            } else {
+                ingredientPickupHint.enabled = false;
+            }
+        } else
+        {
+            ingredientPickupHint.enabled = false;
+        }
+    }
+
     private void Update()
     {
         GetInput();
+        CheckIfGrabbableNearby();
     }
 
     private void GetInput()
