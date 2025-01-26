@@ -1,15 +1,29 @@
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomSpawning : MonoBehaviour
 {
     [SerializeField] private IngredientList ingredientList;
     public GameObject[] ingredients;
     public Transform[] spawnPoints;
+    public float time;
 
     void Start()
     {
-        SpawnIngredients();
+        SpawnIngredients(); // Spawn ingredients for the first time
+    }
+
+    public void nextscene()
+    {
+        PlayerPrefs.SetFloat("Time", time); // Save the time to PlayerPrefs
+        SceneManager.LoadScene("Game Over"); // Load the game over scene
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime; // Increment the time every second
     }
 
     public void SpawnIngredients()
