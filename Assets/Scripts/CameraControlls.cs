@@ -1,17 +1,19 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraControlls : MonoBehaviour
 {
     public Vector3 targetDir;
     public GameObject player;
     public Transform playerObject;
+    public Rigidbody rb;
     public Transform orientation;
     public float rotationSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rotationSpeed = 7f;
+        rotationSpeed = 10f;
         player = GameObject.FindGameObjectWithTag("Player");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -36,7 +38,7 @@ public class CameraControlls : MonoBehaviour
 
         if (inputDir != Vector3.zero)
         {
-            playerObject.forward = Vector3.Slerp(playerObject.forward, inputDir.normalized, rotationSpeed*Time.deltaTime);
+            playerObject.forward = Vector3.Slerp(playerObject.forward, inputDir.normalized, rotationSpeed * Time.deltaTime);
         }
     }
 }

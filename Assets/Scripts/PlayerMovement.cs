@@ -22,7 +22,9 @@ public class PlayerMovement:MonoBehaviour
     public Transform faceDirection;
     public Transform grabPoint;
     public Transform playerCam;
+    public GameObject player;
     private Rigidbody rb;
+    public GameObject playerVisual;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -30,6 +32,7 @@ public class PlayerMovement:MonoBehaviour
     public float groundDrag;
     Coroutine SmoothlyLerpMoveSpeedCo;
     public float maxYSpeed;
+    public float rotationSpeed;
 
     [Header("Jump")]
     public float jumpForce;
@@ -71,6 +74,7 @@ public class PlayerMovement:MonoBehaviour
         moveSpeed = walkSpeed;
         playerHeight = 2;
         groundDrag = 5f;
+        rotationSpeed = 7f;
 
         //jump
         jumpForce = 5f;
@@ -97,7 +101,7 @@ public class PlayerMovement:MonoBehaviour
 
         HandleDrag();
 
-        FaceDirection();
+        RotateTowardsMovementVector();
     }
 
     private void FixedUpdate()
@@ -120,13 +124,17 @@ public class PlayerMovement:MonoBehaviour
     #endregion
 
     //code to rotate the face of the main character towards where the last move command was
-    private void FaceDirection()
+    private void RotateTowardsMovementVector()
     {
+        if (moveDirection.magnitude == 0)
+        {
+            return;
+        }
+
         //rotate the face direction
         if (moveDirection != Vector3.zero)
         {
             faceDirection.transform.rotation = Quaternion.LookRotation(moveDirection);
-            grabPoint.transform.rotation = Quaternion.LookRotation(moveDirection);
         }
     }
 
