@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 1945905364821772069}
   - component: {fileID: 3580807304433221306}
   - component: {fileID: -2004390875499513099}
+  - component: {fileID: -7124849390840542163}
+  - component: {fileID: 7917905104584455059}
+  - component: {fileID: -2397839751530509947}
   m_Layer: 0
-  m_Name: Vial2
+  m_Name: Wide Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.1600003, y: -4.71, z: 4.23}
-  m_LocalScale: {x: 0.11056335, y: 0.11056335, z: 0.11056335}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.05, y: 0.050001513, z: 0.050001513}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,5 +105,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e35849262495da47bff2d34a622ab36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientEffectiveness: 0
   materialIndex: 3
   hints: []
+  acceptDrop: 0
+--- !u!136 &-7124849390840542163
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532339372792100549}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.114649
+  m_Height: 14.358655
+  m_Direction: 1
+  m_Center: {x: 0, y: 7.1304555, z: 0}
+--- !u!54 &7917905104584455059
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532339372792100549}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &-2397839751530509947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532339372792100549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1640c268df7b07340900df7191ed85e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
