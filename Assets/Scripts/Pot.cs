@@ -64,6 +64,9 @@ public class Pot : MonoBehaviour
 
         Ingredient collidedIngredient = collision.gameObject.GetComponent<Ingredient>();
 
+        // Check if ingredient will accept drop (ie. if player is holding don't gwa gwa)
+        if (!collidedIngredient.acceptDrop) return;
+
         int AmountToDecreaseBy = Mathf.RoundToInt(collidedIngredient.ingredientEffectiveness * IngredientEffectivenessMultipler);
 
         LiquidTemperature -= AmountToDecreaseBy;

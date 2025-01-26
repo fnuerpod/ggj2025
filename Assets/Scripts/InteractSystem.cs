@@ -13,6 +13,7 @@ public class InteractSystem : MonoBehaviour
     #endregion
 
     public Ingredient HoldingIngredient;
+    public bool CanDrop = true;
 
     private void Start()
     {
@@ -52,7 +53,19 @@ public class InteractSystem : MonoBehaviour
         }
         else
         {
+            if (!CanDrop) return;
+
             //if grabbed -> drop
+            grabbableObject.Drop();
+            grabbableObject = null;
+            HoldingIngredient = null;
+        }
+    }
+
+    public void Drop()
+    {
+        if (grabbableObject != null)
+        {
             grabbableObject.Drop();
             grabbableObject = null;
             HoldingIngredient = null;
