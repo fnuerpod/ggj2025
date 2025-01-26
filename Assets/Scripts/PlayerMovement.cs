@@ -58,6 +58,8 @@ public class PlayerMovement:MonoBehaviour
 
     Vector3 moveDirection;
 
+    public Animator animator;
+
     [Header("Movement State")]
     public MovementState state;
     public enum MovementState
@@ -102,11 +104,38 @@ public class PlayerMovement:MonoBehaviour
         HandleDrag();
 
         RotateTowardsMovementVector();
+
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    animator.SetBool("isWalking", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("isWalking", false);
+        //}
+
+        //check move
+        if (!IsStationary)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else if (IsStationary)
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    public bool IsStationary
+    {
+        get
+        {
+            return rb.linearVelocity.sqrMagnitude == 0;
+        }
     }
 
     #region Input
@@ -137,7 +166,7 @@ public class PlayerMovement:MonoBehaviour
             faceDirection.transform.rotation = Quaternion.LookRotation(moveDirection);
         }
     }
-
+    #region Collision
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -157,6 +186,7 @@ public class PlayerMovement:MonoBehaviour
             grounded = false;
         }
     }
+    #endregion
 
     private void StateHandler()
     {
@@ -182,6 +212,9 @@ public class PlayerMovement:MonoBehaviour
         // on slope
         if (OnSlope() && !exitingSlope)
         {
+            //set animator 
+            animator.SetBool("isWalking", true);
+
             rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
 
             if (rb.linearVelocity.y > 0)
@@ -191,11 +224,16 @@ public class PlayerMovement:MonoBehaviour
         //on ground
         if (grounded)
         {
+            //set animator 
+            animator.SetBool("isWalking", true);
+
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
         //in the air
         else if (!grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
 
         //turn off gravity while on slope to prevent sliding
         rb.useGravity = !OnSlope();
