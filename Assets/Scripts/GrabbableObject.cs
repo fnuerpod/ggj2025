@@ -21,6 +21,7 @@ public class GrabbableObject : MonoBehaviour
 
     public void Drop()
     {
+
         this.objectGrabPointTransform = null;
         rb.useGravity = true;
     }

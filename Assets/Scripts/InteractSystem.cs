@@ -6,6 +6,7 @@ public class InteractSystem : MonoBehaviour
 {
     #region Variables
     [SerializeField] private Transform faceDirection;
+    [SerializeField] private Animator animator;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private float pickupDistance;
@@ -128,6 +129,9 @@ public class InteractSystem : MonoBehaviour
                 {
                     Sound_ItemGrab.start();
                     grabbableObject.Grab(objectGrabPointTransform);
+
+                    //set animator 
+                    animator.SetBool("holdItem", true);
                 }
             }
         }
@@ -146,9 +150,12 @@ public class InteractSystem : MonoBehaviour
     {
         if (grabbableObject != null)
         {
+            //set animator 
+            animator.SetBool("holdItem", false);
             grabbableObject.Drop();
             grabbableObject = null;
             HoldingIngredient = null;
+
         }
     }
 }
