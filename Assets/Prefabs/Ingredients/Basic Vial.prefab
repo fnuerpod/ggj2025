@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e35849262495da47bff2d34a622ab36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientEffectiveness: 1
+  ingredientEffectiveness: 0
   materialIndex: 3
   hints: []
   acceptDrop: 0
@@ -129,8 +129,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.114649
-  m_Height: 14.358655
+  m_Radius: 10
+  m_Height: 18
   m_Direction: 1
   m_Center: {x: 0, y: 7.1304555, z: 0}
 --- !u!54 &3197913158022980886
