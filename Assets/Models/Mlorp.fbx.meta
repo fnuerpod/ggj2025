@@ -23,7 +23,11 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     animationCompression: 3
+=======
+    animationCompression: 1
+>>>>>>> Stashed changes
 =======
     animationCompression: 1
 >>>>>>> Stashed changes
@@ -96,6 +100,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
@@ -104,6 +109,8 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
 =======
+=======
+>>>>>>> Stashed changes
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
@@ -111,6 +118,9 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
