@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Pot.cs" />
     <Compile Include="Assets\Scripts\Ingredient.cs" />
     <Compile Include="Assets\Scripts\CameraControlls.cs" />
+    <Compile Include="Assets\Scripts\MenuScenes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
