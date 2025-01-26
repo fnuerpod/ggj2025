@@ -470,6 +470,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   HoldingIngredient: {fileID: 0}
+  CanDrop: 1
 --- !u!1 &633146418
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +682,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5387100963096358816, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1092430935}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6531337435222580132, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
       insertIndex: -1
@@ -916,6 +920,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4784296543375667042, guid: 9b71b6abf86b71c47b6cf075fb2a416d, type: 3}
+      propertyPath: acceptDrop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -930,6 +938,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 977663896}
   m_SourcePrefab: {fileID: 100100000, guid: 9b71b6abf86b71c47b6cf075fb2a416d, type: 3}
+--- !u!1 &1092430934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092430935}
+  m_Layer: 0
+  m_Name: DropHeight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092430935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092430934}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.305, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1169464313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169464305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6531337435222580132, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
@@ -968,6 +1007,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce7a5361805f0e4aa497e74628b8af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PotionDropHeight: {fileID: 1092430935}
+  interactKey: 101
+--- !u!4 &1169464313 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5387100963096358816, guid: cb661287a802e514faf971f43f1bbac6, type: 3}
+  m_PrefabInstance: {fileID: 950272762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270072719
 GameObject:
   m_ObjectHideFlags: 0
