@@ -16,7 +16,7 @@ public class Pot : MonoBehaviour
     public int IngredientEffectivenessMultipler = 1;
     public int SecondsBetweenTemperatureIncrease = 1;
 
-    public ParticleSystem particleSystem;
+    public new ParticleSystem particleSystem;
 
     private long LastTemperatureIncrease;
 
@@ -55,7 +55,7 @@ public class Pot : MonoBehaviour
         // initialise sounds.;
         BGM = FMODUnity.RuntimeManager.CreateInstance("event:/MUSIC/PotGame_Music_GameTheme");
         Sound_PotBubble = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_PotBubble");
-        BGM.setVolume(0.1f);
+        BGM.setVolume(0.5f);
 
         BGM.start();
         Sound_PotBubble.start();
