@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6361890756711182616}
   - component: {fileID: -693453786286262637}
   - component: {fileID: 1765208233356071666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

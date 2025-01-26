@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2063950702164760717}
   - component: {fileID: -5433096434131076475}
   - component: {fileID: -2932118923397210971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

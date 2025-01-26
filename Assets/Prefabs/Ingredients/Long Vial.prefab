@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6083110492091612551}
   - component: {fileID: 6551809465470704866}
   - component: {fileID: 456725397549009697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Long Vial
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
