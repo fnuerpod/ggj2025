@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public int ingredientEffectiveness = 1;
+    public int ingredientEffectiveness;
     [SerializeField] private int materialIndex;
-    [SerializeField] private List<string> hints;
+    public List<string> hints;
     private Color[] colours =
     {
         Color.red,

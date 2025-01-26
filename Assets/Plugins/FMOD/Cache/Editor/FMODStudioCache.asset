@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8401320677628720148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PotGame_SFX_PotBubble
+  m_EditorClassIdentifier: 
+  Path: event:/PotGame_SFX_PotBubble
+  Guid:
+    Data1: 1794613794
+    Data2: 1175098420
+    Data3: 2020563367
+    Data4: 746391594
+  Banks:
+  - {fileID: 2950851130891985485}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8299402478465956199}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
+--- !u!114 &-8299402478465956199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PotGame_SFX_PotBubble/PotIntensity
+  m_EditorClassIdentifier: 
+  Name: PotIntensity
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 724461143
+    data2: 550055152
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-4628423574266379884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +67,7 @@ MonoBehaviour:
   Path: FMOD_AudioBanks/BANK FILES/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638734137694589340
+  lastModified: 638734306445691014
   FileSizes: []
   Exists: 1
 --- !u!114 &-2753220407328692020
@@ -33,55 +85,10 @@ MonoBehaviour:
   Path: FMOD_AudioBanks/BANK FILES/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638734137694589340
+  lastModified: 638734306445705322
   FileSizes:
   - Name: 
-    Value: 988
-  Exists: 1
---- !u!114 &-1718658782284538679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PotGame_SFX_GwaGwa
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PotGame_SFX_GwaGwa
-  Guid:
-    Data1: 1048582005
-    Data2: 1074545021
-    Data3: 1491212719
-    Data4: 757466539
-  Banks:
-  - {fileID: 2950851130891985485}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-915226557648979674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/MUSIC.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD_AudioBanks/BANK FILES/MUSIC.bank
-  Name: MUSIC
-  StudioPath: bank:/MUSIC
-  lastModified: 638734137694589340
-  FileSizes: []
+    Value: 870
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -98,46 +105,16 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -2753220407328692020}
   - {fileID: -4628423574266379884}
-  - {fileID: -915226557648979674}
   - {fileID: 2950851130891985485}
   EditorEvents:
-  - {fileID: 3200719607037172246}
-  - {fileID: 2879955551695642873}
-  - {fileID: -1718658782284538679}
+  - {fileID: -8401320677628720148}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4628423574266379884}
   StringsBanks:
   - {fileID: -2753220407328692020}
-  cacheTime: 638734137694599325
+  cacheTime: 638734306445710378
   cacheVersion: 131622
---- !u!114 &2879955551695642873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/PotGame_Music_MenuTheme
-  m_EditorClassIdentifier: 
-  Path: event:/MUSIC/PotGame_Music_MenuTheme
-  Guid:
-    Data1: -1574759723
-    Data2: 1284303708
-    Data3: 111068562
-    Data4: 1653161849
-  Banks:
-  - {fileID: -915226557648979674}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 93333
 --- !u!114 &2950851130891985485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,33 +130,6 @@ MonoBehaviour:
   Path: FMOD_AudioBanks/BANK FILES/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638734137694599325
+  lastModified: 638734306445710378
   FileSizes: []
   Exists: 1
---- !u!114 &3200719607037172246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/PotGame_Music_GameMusic
-  m_EditorClassIdentifier: 
-  Path: event:/MUSIC/PotGame_Music_GameMusic
-  Guid:
-    Data1: -1795798895
-    Data2: 1088052797
-    Data3: 1748252808
-    Data4: 1824580540
-  Banks:
-  - {fileID: -915226557648979674}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 131111

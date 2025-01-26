@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-    public StudioEventEmitter StudioEventEmitter;
+    FMOD.Studio.EventInstance Sound_PotBubble;
 
     public int LiquidTemperature = 0;
     public int IngredientEffectivenessMultipler = 1;
@@ -13,8 +13,8 @@ public class Pot : MonoBehaviour
 
     private long LastTemperatureIncrease;
 
-    private float Lerp_MinHeight = 1.571f;
-    private float Lerp_MaxHeight = 1.818f;
+    private float Lerp_MinHeight = 0.571f;
+    private float Lerp_MaxHeight = 0.818f;
 
 
 
@@ -37,6 +37,10 @@ public class Pot : MonoBehaviour
     {
         LastTemperatureIncrease = GetUnixTime();
         Debug.Log(LastTemperatureIncrease);
+
+        // initialise sounds.
+        Sound_PotBubble = FMODUnity.RuntimeManager.CreateInstance("event:/PotGame_SFX_PotBubble");
+        Sound_PotBubble.start();
     }
 
     private void Update()
@@ -49,7 +53,9 @@ public class Pot : MonoBehaviour
             LastTemperatureIncrease = GetUnixTime();
         }
 
-        transform.position = new Vector3(transform.position.x, LerpCylinderHeight(), transform.position.z);
+        transform.localPosition = new Vector3(0, LerpCylinderHeight(), 0);
+
+        Sound_PotBubble.setParameterByName("PotIntensity", (float)LiquidTemperature);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -64,7 +70,7 @@ public class Pot : MonoBehaviour
         LiquidTemperature -= AmountToDecreaseBy;
 
         // play gwa gwa
-        StudioEventEmitter.Play();
+        //StudioEventEmitter_PotionInsert.Play();
 
         Destroy(collision.gameObject);
     }
