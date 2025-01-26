@@ -101,3 +101,5 @@ fmod_editor.Log
 /UserSettings/
 /UserSettings/*
 UserSettings/Layouts/default-6000.dwlt
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+UserSettings/Layouts/default-6000.dwlt
