@@ -1075,6 +1075,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 658e35495791d004d8ef0c3e6a8b5bbf, type: 3}
   m_PrefabInstance: {fileID: 98367}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2049817241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 658e35495791d004d8ef0c3e6a8b5bbf, type: 3}
+  m_PrefabInstance: {fileID: 98367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &760590188071041469
 >>>>>>> Stashed changes
 PrefabInstance:
@@ -1125,12 +1130,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - target: {fileID: 4570857277062894891, guid: 33e9c05f7d36e0d4394dc12ee83ac78c, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6464923988191447902, guid: 33e9c05f7d36e0d4394dc12ee83ac78c, type: 3}
 =======
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 1996571638342679658, guid: 1599b5191f0e46c48b45eee2dbea122a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.163
