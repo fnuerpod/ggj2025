@@ -87,6 +87,14 @@ public class Pot : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Pause))
+        {
+            BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+            SceneManager.LoadScene("Main Menu");
+        }
+
         long CurrentUnixTime = GetUnixTime();
 
         if (CurrentUnixTime > LastTemperatureIncrease + (SecondsBetweenTemperatureIncrease * 1000) && LiquidTemperature < 100)
@@ -110,6 +118,8 @@ public class Pot : MonoBehaviour
         LerpParticleEffects();
 
         potTemperatureUI.text = "Temperature: " + LiquidTemperature.ToString() + "°C";
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
