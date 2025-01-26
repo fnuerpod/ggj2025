@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class IngredientList : MonoBehaviour
 {
     private int page;
-    private GameObject[] ingredients;
+    private List<GameObject> ingredientsList = new List<GameObject>();
     private List<PageHints> pageHintsList = new List<PageHints>();
 
     [SerializeField] private TextMeshProUGUI[] hintText;
@@ -30,7 +30,15 @@ public class IngredientList : MonoBehaviour
     IEnumerator FindIngredients()
     {
         yield return new WaitForSeconds(0.1f); // Wait for ingredients to be created
-        ingredients = GameObject.FindGameObjectsWithTag("Ingredient"); // Find objects with the "Ingredient" tag and assign them to the ingredients array
+        GameObject[] ingredientsArray = GameObject.FindGameObjectsWithTag("Ingredient"); // Find objects with the "Ingredient" tag and assign them to the ingredients array
+        for (int i = 0; i < maxIngredients; i++) // While i is less than the maximum number of ingredients
+        {
+            GameObject ingredient = null; // Pick a random ingredient from the ingredients array
+            do // Do the following
+                ingredient = ingredientsArray[Random.Range(0, ingredientsArray.Length)]; // Pick a random ingredient from the ingredients array
+            while (ingredientsList.Exists(ingredientInList => ingredientInList.name == ingredient.name)); // While the ingredient is already in the list (to prevent duplicates)
+            ingredientsList.Add(ingredient); // Add the ingredient to the ingredient list
+        }
         RandomiseHints(); // Randomise hints
         UpdatePage(); // Update the page
     }
@@ -38,7 +46,7 @@ public class IngredientList : MonoBehaviour
     void RandomiseHints()
     {
         pageHintsList.Clear(); // Clear the current page hints list
-        foreach (var ingredient in ingredients) // For each ingredient
+        foreach (var ingredient in ingredientsList) // For each ingredient in the list
         {
             PageHints pageHints = new PageHints // Create a new page hints object
             {
