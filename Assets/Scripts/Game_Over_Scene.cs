@@ -7,17 +7,27 @@ public class Game_Over_Scene : MonoBehaviour
     FMOD.Studio.EventInstance BGM;
 
     public Button RestartButton;
+    public Button MenuClick;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Ensure cursor visibility.
         Cursor.visible = true;
 
-        BGM = FMODUnity.RuntimeManager.CreateInstance("event:/MUSIC/PotGame_Music_GameTheme");
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PotIntensity", 5f);
+        if (SceneManager.GetActiveScene().name == "Game Over")
+        {
+            BGM = FMODUnity.RuntimeManager.CreateInstance("event:/MUSIC/PotGame_Music_GameTheme");
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("PotIntensity", 5f);
+        } else
+        {
+            BGM = FMODUnity.RuntimeManager.CreateInstance("event:/MUSIC/PotGame_Music_MainMenu");
+        }
+       
         BGM.start();
 
         RestartButton.onClick.AddListener(RestartClick);
+
+        MenuClick.onClick.AddListener(MainMenuClick);
     }
 
     // Update is called once per frame
@@ -30,5 +40,25 @@ public class Game_Over_Scene : MonoBehaviour
     {
         BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("Game");
+    }
+
+    void MainMenuClick()
+    {
+        BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        
+        if (SceneManager.GetActiveScene().name == "Game Over")
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            if (Application.isEditor)
+            {
+                Debug.LogWarning("Would exit in Built mode!");
+            } else
+            {
+                Application.Quit();
+            }
+        }
     }
 }

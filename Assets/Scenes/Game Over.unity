@@ -640,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartButton: {fileID: 73349132}
+  MenuClick: {fileID: 1677484571}
 --- !u!1 &749838634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1316,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1677484572
 MonoBehaviour:
   m_ObjectHideFlags: 0
