@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,15 +14,10 @@ public class RandomSpawning : MonoBehaviour
         SpawnIngredients(); // Spawn ingredients for the first time
     }
 
-    public void nextscene()
-    {
-        PlayerPrefs.SetFloat("Time", time); // Save the time to PlayerPrefs
-        SceneManager.LoadScene("Game Over"); // Load the game over scene
-    }
-
     private void Update()
     {
         time += Time.deltaTime; // Increment the time every second
+        PlayerPrefs.SetFloat("Time", time); // Save the time to PlayerPrefs
     }
 
     public void SpawnIngredients()
