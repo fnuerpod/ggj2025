@@ -19,6 +19,7 @@ public class IngredientList : MonoBehaviour
         public string IngredientName { get; set; }
         public string Size { get; set; }
         public string Color { get; set; }
+        public bool OnList { get; set; }
         public bool ShowSize { get; set; }
         public bool ShowColor { get; set; }
     }
@@ -40,13 +41,17 @@ public class IngredientList : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f); // Wait for ingredients to be created
         GameObject[] ingredientsArray = GameObject.FindGameObjectsWithTag("Ingredient"); // Find objects with the "Ingredient" tag and assign them to the ingredients array
+
         for (int i = 0; i < maxIngredients; i++) // While i is less than the maximum number of ingredients
         {
-            GameObject ingredient = null; // Pick a random ingredient from the ingredients array
-            do // Do the following
-                ingredient = ingredientsArray[Random.Range(0, ingredientsArray.Length)]; // Pick a random ingredient from the ingredients array
-            while (ingredientsList.Exists(ingredientInList => ingredientInList.name == ingredient.name)); // While the ingredient is already in the list (to prevent duplicates)
-            ingredientsList.Add(ingredient); // Add the ingredient to the ingredient list
+            if (ingredientsList.Count <= 3)
+            {
+                GameObject ingredient = null; // Pick a random ingredient from the ingredients array
+                do // Do the following
+                    ingredient = ingredientsArray[Random.Range(0, ingredientsArray.Length)]; // Pick a random ingredient from the ingredients array
+                while (ingredientsList.Exists(ingredientInList => ingredientInList.name == ingredient.name)); // While the ingredient is already in the list (to prevent duplicates)
+                ingredientsList.Add(ingredient); // Add the ingredient to the ingredient list
+            }
         }
         RandomiseHints(); // Randomise hints
         UpdatePage(); // Update the page
@@ -57,13 +62,18 @@ public class IngredientList : MonoBehaviour
         pageHintsList.Clear(); // Clear the current page hints list
         foreach (var ingredient in ingredientsList) // For each ingredient in the list
         {
-            ingredient.GetComponent<Ingredient>().ingredientEffectiveness = 1; // Set the ingredient effectiveness to 1
             PageHints pageHints = new PageHints // Create a new page hints object
             {
                 IngredientName = ingredient.GetComponent<Ingredient>().hints[0], // Set the ingredient name hint
+                OnList = true,
                 ShowColor = Random.value > 0.5f, // Randomly decide whether to show the colour hint
                 ShowSize = Random.value > 0.5f // Randomly decide whether to show the size hint
             };
+
+            if (pageHints.OnList) // If the ingredient is on the list
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness = 1; // Set the ingredient effectiveness to 1
+            else // If not
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness = 0; // Set the ingredient effectiveness to 0
 
             if (pageHints.ShowColor) // If the colour is to be shown
                 pageHints.Color = ingredient.GetComponent<Ingredient>().hints[1]; // Set the colour hint

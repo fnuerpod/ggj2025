@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PotDropMechanic : MonoBehaviour
 {
+    [SerializeField] private RandomSpawning spawnCode;
     [SerializeField] private Transform PotionDropHeight;
     [SerializeField] private KeyCode interactKey;
 
@@ -46,6 +47,14 @@ public class PotDropMechanic : MonoBehaviour
 
         heldIngredient.transform.position = PotionDropHeight.transform.position;
         Sound_PotionDrop.Play();
+
+        StartCoroutine(WaitBeforeSpawn());
+    }
+
+    private System.Collections.IEnumerator WaitBeforeSpawn()
+    {
+        yield return new WaitForSeconds(1.0f);
+        spawnCode.SpawnIngredients();
     }
 
     // Update is called once per frame

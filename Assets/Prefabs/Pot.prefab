@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1fbda41db07d4b8a0a505ee87ce86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potTemperatureUI: {fileID: 0}
   LiquidTemperature: 0
   IngredientEffectivenessMultipler: 1
   SecondsBetweenTemperatureIncrease: 1
@@ -268,7 +269,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9999988, y: 1.4135435, z: 1.9999993}
+  m_Size: {x: 3, y: 1.5, z: 3}
   m_Center: {x: -0.00000035762787, y: -0.29322827, z: -0.00000035762787}
 --- !u!114 &39173178041042546
 MonoBehaviour:
@@ -285,6 +286,7 @@ MonoBehaviour:
   PotionDropHeight: {fileID: 5634663520666652555}
   interactKey: 101
   Sound_PotionDrop: {fileID: 4699622307147419675}
+  PlayerInCollisionField: 0
 --- !u!114 &4699622307147419675
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Game_Over_Scene : MonoBehaviour
 {
     FMOD.Studio.EventInstance BGM;
+    FMOD.Studio.EventInstance ButtonClickSound;
 
     public Button RestartButton;
     public Button MenuClick;
@@ -13,6 +14,8 @@ public class Game_Over_Scene : MonoBehaviour
     {
         // Ensure cursor visibility.
         Cursor.visible = true;
+
+        ButtonClickSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_ItemPickup");
 
         if (SceneManager.GetActiveScene().name == "Game Over")
         {
@@ -38,12 +41,14 @@ public class Game_Over_Scene : MonoBehaviour
 
     void RestartClick()
     {
+        ButtonClickSound.start();
         BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("Game");
     }
 
     void MainMenuClick()
     {
+        ButtonClickSound.start();
         BGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         
         if (SceneManager.GetActiveScene().name == "Game Over")
