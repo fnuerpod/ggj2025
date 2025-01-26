@@ -319,6 +319,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375513703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7748006394736512133, guid: 9fb93e205f9b2e241b25b28b5ab61b79, type: 3}
+  m_PrefabInstance: {fileID: 7787260057314514255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4fc2c0d60aa189449aea70f6fa55c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &533002385 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8235847283900295825, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
@@ -563,6 +574,17 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1899041555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1663690429035663712, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
+  m_PrefabInstance: {fileID: 7909328948927624509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dcc34fe6572b148ad04949dcfdc43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7787260057314514255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7748006394736512133, guid: 9fb93e205f9b2e241b25b28b5ab61b79, type: 3}
+      propertyPath: ingredientList
+      value: 
+      objectReference: {fileID: 1899041555}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -631,6 +657,18 @@ PrefabInstance:
     - target: {fileID: 2941793106638359137, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
       propertyPath: m_Name
       value: Hint List
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111151584069398494, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 375513703}
+    - target: {fileID: 6111151584069398494, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnIngredients
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111151584069398494, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RandomSpawning, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8235847283900295825, guid: 858d8a808f750a04f90e04030f4fafae, type: 3}
       propertyPath: m_Pivot.x

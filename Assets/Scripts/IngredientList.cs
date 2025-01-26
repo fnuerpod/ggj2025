@@ -7,9 +7,10 @@ using UnityEngine.UIElements;
 public class IngredientList : MonoBehaviour
 {
     private int page;
-    private List<GameObject> ingredientsList = new List<GameObject>();
+    public List<GameObject> ingredientsList = new List<GameObject>();
     private List<PageHints> pageHintsList = new List<PageHints>();
 
+    [SerializeField] private GameObject ingredientDisplay;
     [SerializeField] private TextMeshProUGUI[] hintText;
     [SerializeField] private int maxIngredients;
 
@@ -27,7 +28,15 @@ public class IngredientList : MonoBehaviour
         StartCoroutine(FindIngredients()); // Find ingredients
     }
 
-    IEnumerator FindIngredients()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && ingredientDisplay.activeSelf) // If the player presses Q
+            ingredientDisplay.SetActive(false); // Hide the ingredient list
+        else if (Input.GetKeyDown(KeyCode.Q) && !ingredientDisplay.activeSelf) // If the player presses Q
+            ingredientDisplay.SetActive(true); // Show the ingredient list
+    }
+
+    public IEnumerator FindIngredients()
     {
         yield return new WaitForSeconds(0.1f); // Wait for ingredients to be created
         GameObject[] ingredientsArray = GameObject.FindGameObjectsWithTag("Ingredient"); // Find objects with the "Ingredient" tag and assign them to the ingredients array
@@ -48,6 +57,7 @@ public class IngredientList : MonoBehaviour
         pageHintsList.Clear(); // Clear the current page hints list
         foreach (var ingredient in ingredientsList) // For each ingredient in the list
         {
+            ingredient.GetComponent<Ingredient>().ingredientEffectiveness = 1; // Set the ingredient effectiveness to 1
             PageHints pageHints = new PageHints // Create a new page hints object
             {
                 IngredientName = ingredient.GetComponent<Ingredient>().hints[0], // Set the ingredient name hint
@@ -58,12 +68,12 @@ public class IngredientList : MonoBehaviour
             if (pageHints.ShowColor) // If the colour is to be shown
                 pageHints.Color = ingredient.GetComponent<Ingredient>().hints[1]; // Set the colour hint
             else // If not
-                ingredient.GetComponent<Ingredient>().ingredientEffectiveness++; // Increase the ingredient effectiveness
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness += 2; // Increase the ingredient effectiveness
 
             if (pageHints.ShowSize) // If the size is to be shown
                 pageHints.Size = ingredient.GetComponent<Ingredient>().hints[2]; // Set the size hint
             else // If not
-                ingredient.GetComponent<Ingredient>().ingredientEffectiveness++; // Increase the ingredient effectiveness
+                ingredient.GetComponent<Ingredient>().ingredientEffectiveness += 2; // Increase the ingredient effectiveness
 
             pageHintsList.Add(pageHints); // Add these hints to the list of page hints
         }
