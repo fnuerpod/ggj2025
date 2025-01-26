@@ -10,6 +10,8 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private float pickupDistance;
     [SerializeField] private LayerMask pickupLayerMask;
     private GrabbableObject grabbableObject;
+
+    FMOD.Studio.EventInstance Sound_ItemGrab;
     #endregion
 
     public Ingredient HoldingIngredient;
@@ -19,6 +21,8 @@ public class InteractSystem : MonoBehaviour
     {
         pickupDistance = 2f;
         interactKey = KeyCode.E;
+
+        Sound_ItemGrab = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/PotGame_SFX_ItemPickup");
     }
 
     private void Update()
@@ -47,6 +51,7 @@ public class InteractSystem : MonoBehaviour
                 // check if it is a grabbable object
                 if (raycastHit.transform.TryGetComponent(out grabbableObject) && raycastHit.transform.TryGetComponent(out HoldingIngredient))
                 {
+                    Sound_ItemGrab.start();
                     grabbableObject.Grab(objectGrabPointTransform);
                 }
             }

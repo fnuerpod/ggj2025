@@ -1,3 +1,4 @@
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,12 +7,14 @@ public class PotDropMechanic : MonoBehaviour
     [SerializeField] private Transform PotionDropHeight;
     [SerializeField] private KeyCode interactKey;
 
+    public StudioEventEmitter Sound_PotionDrop;
+
     private bool PlayerInCollisionField = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     private void GetInput()
@@ -42,6 +45,7 @@ public class PotDropMechanic : MonoBehaviour
         interactSystem.Drop();
 
         heldIngredient.transform.position = PotionDropHeight.transform.position;
+        Sound_PotionDrop.Play();
     }
 
     // Update is called once per frame
